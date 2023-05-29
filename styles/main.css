@@ -9,10 +9,12 @@
   --secondary: hsl(149, 80%, 90%);
   --extra: hsl(210, 20%, 98%);
 
-  --font-primary: var(--black);
+  --font-primary: hsl(240, 5%, 4%);
   --font-secondary: hsl(220, 9%, 46%);
 
-  --primary-hover: hsl(163, 94%, 24%);
+  --primary-hover: hsl(161, 92%, 36%);
+
+  --rounded: 0.6rem;
 }
 
 * {
@@ -29,15 +31,94 @@ body {
   scroll-behavior: smooth;
   background-color: var(--extra);
 
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 body * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .container {
-  width: min(102.4rem, 100%);
+  width: min(124.6rem, 100%);
   margin-inline: auto;
   padding-inline: 1.6rem;
+}
+
+h1 {
+  font-size: clamp(3.2rem, 5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.075rem;
+  color: var(--font-primary);
+}
+
+h2 {
+  font-size: clamp(3.2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.075rem;
+  color: var(--font-primary);
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.075rem;
+  color: var(--font-primary);
+}
+
+p {
+  font-weight: 600;
+  color: var(--font-secondary);
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--font-secondary);
+}
+
+a.active {
+  color: var(--primary);
+}
+
+span {
+  font-size: 2.4rem;
+  font-family: "Bai Jamjuree", sans-serif;
+  color: var(--primary);
+}
+
+strong {
+  font-family: 600;
+  color: var(--primary);
+}
+
+.mainButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+
+  height: 4.8rem;
+  padding-inline: 2rem;
+  background-color: var(--primary);
+  border-radius: var(--rounded);
+  transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+  font-size: 1.8rem;
+  color: var(--white);
+}
+
+.mainButton:hover {
+  background-color: var(--primary-hover);
+}
+
+.page-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: min(56.8rem, 100%);
+  text-align: center;
 }
