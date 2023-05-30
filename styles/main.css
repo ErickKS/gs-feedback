@@ -53,7 +53,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(3.2rem, 5vw, 4rem);
+  font-size: clamp(3.2rem, 3vw, 4rem);
   font-weight: 700;
   line-height: 1.16;
   letter-spacing: -0.075rem;
@@ -74,8 +74,8 @@ p {
 
 a {
   text-decoration: none;
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: var(--font-secondary);
 }
 
@@ -90,8 +90,12 @@ span {
 }
 
 strong {
-  font-family: 600;
+  font-weight: 600;
   color: var(--primary);
+}
+
+ul {
+  list-style-type: none;
 }
 
 .mainButton {
@@ -121,4 +125,272 @@ strong {
 
   width: min(56.8rem, 100%);
   text-align: center;
+}
+
+/* ========== NAV ========== */
+
+nav {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+
+  width: 100%;
+  height: 7rem;
+  margin-top: 0.8rem;
+  background-color: transparent;
+  backface-visibility: hidden;
+  transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+nav.active {
+  background-color: var(--white);
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: var(--rounded);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+nav.fixed .container {
+  background-color: var(--white);
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+.nav__logo a {
+  display: block;
+}
+
+#navigation > ul {
+  position: absolute;
+  z-index: 1;
+  top: 6.3rem;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 0;
+  border-radius: var(--rounded);
+  visibility: hidden;
+  overflow-y: hidden;
+  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+#navigation.active > ul {
+  height: auto;
+  padding-bottom: 1.6rem;
+  visibility: visible;
+  background-color: var(--white);
+  box-shadow: 0 0.3rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+#navigation ul li {
+  text-align: left;
+  padding: 0.5rem 1.6rem;
+}
+#navigation ul li:nth-of-type(5) {
+  margin-top: 0.6rem;
+}
+
+#navigation ul li a:not(a.mainButton) {
+  display: block;
+  padding-block: 0.6rem;
+  transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+#navigation ul li a.active {
+  color: var(--primary);
+}
+#navigation a.mainButton {
+  height: 4rem;
+}
+
+#navigation button {
+  display: flex;
+
+  padding: 0.8rem 1.6rem;
+  border: none;
+  background: none;
+}
+
+#hamburger {
+  width: 2.5rem;
+  border-top: 0.2rem solid var(--black);
+}
+
+#hamburger::after,
+#hamburger::before {
+  content: "";
+  position: relative;
+  display: block;
+
+  width: 2.5rem;
+  height: 0.2rem;
+  background-color: var(--black);
+  margin-top: 0.5rem;
+  transition: 0.3s;
+}
+
+#navigation.active #hamburger {
+  border-top-color: transparent;
+}
+#navigation.active #hamburger::before {
+  transform: rotate(135deg);
+}
+#navigation.active #hamburger::after {
+  transform: rotate(-135deg);
+  top: -0.7rem;
+}
+
+#navigation > a.mainButton {
+  display: none;
+}
+
+/* ========== FOOTER ========== */
+
+footer {
+  position: relative;
+
+  margin-top: 12rem;
+}
+
+footer .container {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+footer .about {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+footer .members {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.members__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.copyright {
+  text-align: center;
+  padding-block: 1.6rem;
+  margin-top: 4.4rem;
+  border-top: 0.2rem solid var(--font-secondary);
+
+  font-size: 1.6rem;
+}
+
+/* ========== LAYERS ========== */
+header .layer {
+  position: absolute;
+  inset: 0;
+
+  height: 60rem;
+  background: linear-gradient(180deg, #d1fae5 0%, #f9fafb 100%);
+}
+
+footer .layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 25rem;
+  background: linear-gradient(180deg, #f9fafb 0%, #d1fae5 100%);
+}
+
+/* ================================================================================== */
+/* =================================== RESPONSIVE =================================== */
+/* ================================================================================== */
+
+@media (min-width: 769px) {
+  /* ========== NAV ========== */
+  nav * {
+    visibility: initial;
+    overflow-y: initial;
+  }
+
+  nav.active {
+    background-color: transparent;
+  }
+
+  #navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  #navigation button {
+    display: none;
+  }
+
+  #navigation ul {
+    position: initial;
+    flex-direction: row;
+
+    /* if has active */
+    height: initial !important;
+    padding-bottom: 0 !important;
+    border-bottom: none;
+  }
+  #navigation.active > ul {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  #navigation ul li {
+    padding-inline: 0.6rem;
+  }
+
+  #navigation ul li a {
+    padding: 0.8rem;
+    font-size: 1.6rem;
+  }
+  #navigation ul li:nth-of-type(5) {
+    display: none;
+  }
+
+  #navigation ul li a:hover {
+    color: var(--primary);
+  }
+
+  #navigation > a.mainButton {
+    display: flex;
+    margin-left: 0.8rem;
+  }
+
+  footer .container:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    justify-content: space-between;
+  }
+
+  footer .about {
+    width: min(38.2rem, 100%);
+  }
+
+  footer .members {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+
+    width: min(61rem, 100%);
+  }
+
+  .member__single {
+    display: grid;
+    grid-template-columns: 1fr 10.2rem;
+    gap: 0.8rem;
+  }
 }

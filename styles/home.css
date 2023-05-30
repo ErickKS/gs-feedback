@@ -1,0 +1,264 @@
+/* ========== BANNER ========== */
+.banner {
+  position: relative;
+  z-index: 1;
+
+  padding-top: 16rem;
+}
+
+.banner .container {
+  display: grid;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.banner__text {
+  max-width: 48.4rem;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.banner__text h1 {
+  margin-block: 0.8rem 1.6rem;
+}
+
+.banner__text p {
+  margin-bottom: 3.2rem;
+}
+
+.banner__img {
+  display: flex;
+  justify-content: center;
+}
+
+.banner__img img {
+  width: 100%;
+}
+
+/* ========== MAIN ========== */
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+
+  width: min(57.6rem, 100%);
+  margin-inline: auto;
+  margin-top: 7rem;
+}
+
+section.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+#content {
+  padding-top: 9rem;
+}
+#content .container {
+  flex-direction: column-reverse;
+}
+
+.section__text h2 {
+  margin-block: 0.4rem 1.6rem;
+}
+
+.section__img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.section__img img {
+  width: 100%;
+  border-radius: var(--rounded);
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+/* ========== CARDS ========== */
+
+section.cards .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+section.cards h2 {
+  text-align: center;
+}
+
+.cards__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.card__single {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  width: 30.4rem;
+  padding: 2.4rem 1.6rem;
+  border-radius: var(--rounded);
+  background-color: var(--white);
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+.card__single:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0 1rem rgba(5, 150, 105, 0.4);
+}
+
+.card__single img {
+  width: 3.2rem;
+}
+
+.card__single a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  color: var(--primary);
+}
+
+.card__single a svg {
+  transition: 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+.card__single a:hover svg {
+  transform: translateX(0.4rem);
+}
+
+/* ========== CONTACT ========== */
+
+.contact {
+  position: relative;
+  z-index: 1;
+}
+
+.contact__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: 6.4rem;
+  text-align: center;
+  border-radius: var(--rounded);
+  background: radial-gradient(
+    90.16% 143.01% at 15.32% 21.04%,
+    rgba(82, 220, 161, 0.2) 0%,
+    rgba(209, 250, 229, 0.11) 77.08%,
+    rgba(209, 250, 229, 0) 100%
+  );
+  overflow: hidden;
+}
+
+.contact__text strong {
+  font-weight: 700;
+}
+
+.contact__text a {
+  margin-top: 2.4rem;
+}
+
+.contact__img {
+  display: none;
+}
+
+.contact__wrapper > img {
+  position: absolute;
+  mix-blend-mode: darken;
+}
+
+.contact__wrapper > img:nth-of-type(1) {
+  inset: 0;
+}
+.contact__wrapper > img:nth-of-type(2) {
+  bottom: -2.6rem;
+  right: -6.4rem;
+}
+
+/* ================================================================================== */
+/* =================================== RESPONSIVE =================================== */
+/* ================================================================================== */
+
+@media (min-width: 640px) {
+  /* ========== BANNER ========== */
+  .banner__img img {
+    width: 70%;
+  }
+}
+
+@media (min-width: 896px) {
+  /* ========== MAIN ========== */
+  main {
+    width: initial;
+    gap: 12rem;
+  }
+
+  section.hero .container {
+    flex-direction: row;
+    gap: 6.4rem;
+  }
+
+  #content .container {
+    flex-direction: row;
+  }
+
+  .section__img {
+    width: initial;
+  }
+
+  .section__img img {
+    width: 48rem;
+  }
+
+  /* ========== CARDS ========== */
+  .cards__wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ========== CONTACT ========== */
+  .contact__wrapper {
+    padding-block: initial;
+    text-align: left;
+    padding-left: 2.4rem;
+  }
+
+  .contact__img {
+    display: flex;
+  }
+
+  .contact__wrapper > img:nth-of-type(2) {
+    bottom: -1.6rem;
+    left: 15%;
+  }
+}
+
+@media (min-width: 992px) {
+  /* ========== BANNER ========== */
+  .banner .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+  }
+
+  .banner__text {
+    text-align: left;
+    margin-inline: initial;
+  }
+
+  .banner__img img {
+    width: 100%;
+  }
+
+  /* ========== CONTACT ========== */
+  .contact__wrapper > img:nth-of-type(2) {
+    left: 23%;
+  }
+}
