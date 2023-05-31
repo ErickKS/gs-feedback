@@ -146,6 +146,7 @@ section.cards h2 {
   justify-content: space-between;
 
   padding-block: 6.4rem;
+  padding-inline: 1.6rem;
   text-align: center;
   border-radius: var(--rounded);
   background: radial-gradient(
@@ -155,6 +156,10 @@ section.cards h2 {
     rgba(209, 250, 229, 0) 100%
   );
   overflow: hidden;
+}
+
+.contact__text h2 {
+  max-width: 47rem;
 }
 
 .contact__text strong {
@@ -228,7 +233,7 @@ section.cards h2 {
   .contact__wrapper {
     padding-block: initial;
     text-align: left;
-    padding-left: 2.4rem;
+    padding-inline: 2.4rem 0;
   }
 
   .contact__img {
@@ -244,7 +249,7 @@ section.cards h2 {
 @media (min-width: 992px) {
   /* ========== BANNER ========== */
   .banner .container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.4rem;
   }
 
