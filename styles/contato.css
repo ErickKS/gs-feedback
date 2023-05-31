@@ -1,0 +1,114 @@
+/* ========== BANNER ========== /
+.banner {
+  position: relative;
+  z-index: 1;
+
+  padding-top: 16rem;
+}
+
+.banner__text {
+  text-align: center;
+  width: min(56.8rem, 100%);
+  margin-inline: auto;
+}
+
+/ ========== FORM ========== */
+
+main {
+  margin-top: 16rem;
+}
+
+main .container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  width: min(55.4rem, 100%);
+}
+
+form div {
+  position: relative;
+}
+
+form input {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 5rem;
+  padding: 1.8rem 2.1rem 0 2.1rem;
+  border: 0.1rem solid var(--font-secondary);
+  border-radius: var(--rounded);
+  background-color: transparent;
+  outline: none;
+
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: var(--black);
+}
+form input:focus {
+  border: 0.1rem solid var(--black);
+}
+
+form label {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  margin: 1.3rem 2.2rem;
+  transform-origin: 0 0;
+  transition: 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+  cursor: text;
+
+  font-size: 1.8rem;
+  color: var(--font-secondary);
+}
+
+form input:focus + label {
+  transform: translateY(-1rem) scale(0.8);
+}
+
+form input:not(:placeholder-shown) + label {
+  transform: translateY(-1rem) scale(0.8);
+}
+
+form input:not(:placeholder-shown) {
+  border: 0.1rem solid var(--font-primary);
+}
+
+form label span {
+  color: #c90909;
+  font-size: 1.6rem;
+}
+
+form textarea {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 20rem;
+  padding: 1.8rem 2.1rem 0 2.1rem;
+  border: 0.1rem solid var(--font-secondary);
+  border-radius: var(--rounded);
+  background-color: transparent;
+  outline: none;
+  resize: none;
+
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: var(--black);
+}
+form textarea::placeholder {
+  font-size: 1.8rem;
+  color: var(--font-secondary);
+}
+
+form button {
+  border: none;
+  cursor: pointer;
+}
