@@ -1,0 +1,131 @@
+/* ========== BANNER ========== */
+.banner {
+  position: relative;
+  z-index: 1;
+
+  padding-top: 16rem;
+}
+
+.banner__text {
+  text-align: center;
+  width: min(56.8rem, 100%);
+  margin-inline: auto;
+}
+
+/* ========== HIGHLIGHT ========== */
+
+.highlight {
+  margin-top: 16rem;
+}
+
+.highlight .container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-block: 10rem;
+  border-radius: var(--rounded);
+  overflow: hidden;
+  background: radial-gradient(
+    90.16% 143.01% at 15.32% 21.04%,
+    rgba(82, 220, 161, 0.2) 10.94%,
+    rgba(209, 250, 229, 0.0447917) 65.1%,
+    rgba(82, 220, 161, 0.2) 83.33%
+  );
+}
+
+.highlight p {
+  max-width: 90rem;
+  text-align: center;
+  font-size: 2.6rem;
+  color: var(--black);
+  font-weight: 700;
+}
+
+.highlight .container > img {
+  position: absolute;
+  mix-blend-mode: darken;
+}
+
+.highlight .container > img:nth-of-type(1) {
+  top: -4rem;
+  left: 0;
+}
+.highlight .container > img:nth-of-type(2) {
+  bottom: -4rem;
+  right: -1rem;
+}
+
+/* ========== MAIN ========== */
+main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6.4rem;
+
+  width: min(57.6rem, 100%);
+  margin-inline: auto;
+  margin-top: 16rem;
+}
+
+.section__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  border-radius: var(--rounded);
+}
+
+.section__text h2 {
+  margin-block: 0.4rem 2.4rem;
+}
+
+.section__img {
+  display: flex;
+}
+
+.section__img img {
+  width: 100%;
+  border-radius: var(--rounded);
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+/* ================================================================================== */
+/* =================================== RESPONSIVE =================================== */
+/* ================================================================================== */
+
+@media (min-width: 964px) {
+  /* ========== HIGHLIGHT ========== */
+  .highlight .container > img:nth-of-type(1) {
+    inset: 0;
+  }
+  .highlight .container > img:nth-of-type(2) {
+    bottom: -2rem;
+    right: -1rem;
+  }
+
+  /* ========== MAIN ========== */
+  main {
+    width: initial;
+  }
+
+  .section__wrapper {
+    padding-inline: 1.6rem;
+  }
+
+  .section__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 48.4rem;
+    gap: 4.8rem;
+
+    padding-block: 1.6rem;
+    background-color: var(--white);
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+  }
+
+  .section__img img {
+    width: 100%;
+  }
+}
