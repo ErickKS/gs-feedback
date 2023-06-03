@@ -286,7 +286,7 @@ footer .members {
   text-align: center;
   padding-block: 1.6rem;
   margin-top: 4.4rem;
-  border-top: 0.2rem solid var(--font-secondary);
+  border-top: 0.1rem solid var(--font-secondary);
 
   font-size: 1.6rem;
 }
